@@ -1,0 +1,1225 @@
+:root {
+  color-scheme: dark;
+  --bg: #050505;
+  --surface: #0d0d0d;
+  --glass: rgba(255, 255, 255, 0.04);
+  --text: #f5f5f7;
+  --muted: rgba(255, 255, 255, 0.7);
+  --accent: #5ac8fa;
+  --accent-2: #ffd60a;
+  --border: rgba(255, 255, 255, 0.12);
+  font-family: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: clamp(16px, 1.4vw, 18px);
+}
+
+img {
+  width: 100%;
+  display: block;
+  border-radius: 32px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: url("https://www.transparenttextures.com/patterns/asfalt-dark.png")
+    repeat;
+  opacity: 0.08;
+  z-index: 0;
+}
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem clamp(1.5rem, 6vw, 7rem);
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom: 1px solid transparent;
+  backdrop-filter: blur(20px);
+  z-index: 10;
+  color: #000000;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95); /* 드롭다운과 색상 일치 */
+}
+
+.brand {
+  display: inline-block;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.brand:hover {
+  opacity: 0.8;
+}
+
+.logo-img {
+  height: 20px;
+  width: auto;
+  display: block;
+}
+
+.hero-video-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.hero-video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-video::-webkit-media-controls {
+  display: none !important;
+}
+
+.hero-video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+.hero-video::-webkit-media-controls-play-button {
+  display: none !important;
+}
+
+.hero-video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-video-content {
+  text-align: center;
+  color: #ffffff;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.hero-video-kicker {
+  font-size: clamp(0.75rem, 1.5vw, 0.95rem);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.hero-video-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  line-height: 0.5;
+  margin-bottom: 2.5rem;
+  text-align: left;
+  color: #ffffff;
+}
+
+.hero-video-search {
+  display: flex;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-video-input {
+  flex: 1;
+  min-width: 280px;
+  padding: 1rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #000000;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.hero-video-input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-video-input:focus {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: #ffffff;
+}
+
+.hero-video-btn {
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #000000;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  white-space: nowrap;
+}
+
+.hero-video-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.hero-video-btn:active {
+  transform: scale(0.98);
+}
+
+
+.site-nav nav {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.95rem;
+}
+
+.site-nav nav a {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.site-nav nav a:hover {
+  color: #000000;
+}
+
+.site-nav .ghost-btn {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: #000000;
+}
+
+.site-nav .ghost-btn:hover {
+  border-color: rgba(0, 0, 0, 0.4);
+}
+
+.ghost-btn {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.65rem 1.6rem;
+  background: transparent;
+  color: var(--text);
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: border 0.2s, color 0.2s;
+}
+
+.ghost-btn:hover {
+  border-color: var(--text);
+}
+
+.ghost-light {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+}
+
+.ghost-dark {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #111;
+  background: #fff;
+}
+
+.primary-btn {
+  background: linear-gradient(120deg, #0a84ff, #64d2ff);
+  color: #020202;
+  border: none;
+  border-radius: 999px;
+  padding: 0.85rem 2.6rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.primary-btn.hollow {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding: clamp(2rem, 6vw, 7rem);
+}
+
+.hero {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+  padding: clamp(2rem, 6vw, 5rem);
+  background: radial-gradient(circle at top right, #0f0f0f 0%, #050505 60%);
+  /* border-radius: 48px; */
+  /* border: 1px solid var(--border); */
+  position: relative;
+}
+
+.copy {
+  display: grid;
+  /* gap: 3rem; */
+  align-items: center;
+  position: relative;
+}
+
+.copy h1 {
+  font-size: clamp(2.8rem, 6vw, 4.6rem);
+  line-height: 1.1;
+  margin: 0 0 1rem;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 6vw, 4.6rem);
+  line-height: 1.1;
+  margin: 0 0 1rem;
+}
+
+.hero-copy {
+  color: var(--muted);
+  max-width: 36ch;
+}
+
+.hero-kicker,
+.kicker {
+  /* text-transform: uppercase; */
+  letter-spacing: 0.32em;
+  font-size: 0.75rem;
+  color: var(--accent);
+}
+
+.department-title {
+  /* letter-spacing: 0.32em; */
+  font-size: 2rem;
+  color: var(--accent);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.department-title-2 {
+  /* letter-spacing: 0.32em; */
+  font-size: 2rem;
+  color: var(--accent);
+  font-weight: 200;
+  line-height: 1;
+}
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.hero-media {
+  position: relative;
+}
+
+.hero-media img {
+  border-radius: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.badge {
+  position: absolute;
+  bottom: -1.5rem;
+  right: 2rem;
+  background: rgba(5, 5, 5, 0.9);
+  padding: 1rem 1.5rem;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
+
+.pill-tray {
+  overflow: hidden;
+}
+
+.pill-tray__rail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(180px, 1fr);
+  gap: 1rem;
+  padding: 0.5rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.pill {
+  padding: 0.75rem 1.2rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+  border: 1px solid transparent;
+}
+
+.pill.is-active {
+  color: #020202;
+  background: #f5f5f7;
+  border-color: #fff;
+}
+
+.panel-grid__inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.panel {
+  padding: 2rem;
+  border-radius: 40px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-height: 420px;
+}
+
+.panel__tag {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  color: var(--accent-2);
+}
+
+.panel__copy {
+  color: var(--muted);
+  margin-bottom: auto;
+}
+
+.panel img {
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-height: 180px;
+  object-fit: cover;
+}
+
+.departments-section {
+  margin: 3rem calc(-1 * clamp(2rem, 6vw, 7rem));
+  padding: 0;
+  background-color: #FFFFFF;
+}
+
+
+.departments-section header {
+  margin-bottom: 3rem;
+  text-align: center;
+  padding: 0 clamp(2rem, 6vw, 7rem);
+}
+
+.departments-section h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  margin: 0.5rem 0 0;
+}
+
+.departments-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+}
+
+.department-card {
+  position: relative;
+  border-radius: 0;
+  overflow: hidden;
+  border: none;
+  background: var(--bg);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.department-card[data-department="ophthalmology"] {
+  background: #f1f1f1;
+  color: #000000;
+}
+
+.department-card[data-department="ophthalmology"] .department-card__content h3 {
+  color: #000000;
+}
+
+.department-card[data-department="ophthalmology"] .ghost-btn {
+  border-color: rgba(0, 0, 0, 0.2);
+  color: #000000;
+}
+
+.department-card[data-department="ophthalmology"] .ghost-btn:hover {
+  border-color: rgba(0, 0, 0, 0.4);
+}
+
+.department-card[data-department="dermatology"],
+.department-card[data-department="internal"],
+.department-card[data-department="ent"],
+.department-card[data-department="pediatrics"] {
+  background: #f1f1f1;
+  color: #000000;
+}
+
+.department-card[data-department="dermatology"] .department-card__content h3,
+.department-card[data-department="internal"] .department-card__content h3,
+.department-card[data-department="ent"] .department-card__content h3,
+.department-card[data-department="pediatrics"] .department-card__content h3 {
+  color: #000000;
+}
+
+.department-card[data-department="dermatology"] .ghost-btn,
+.department-card[data-department="internal"] .ghost-btn,
+.department-card[data-department="ent"] .ghost-btn,
+.department-card[data-department="pediatrics"] .ghost-btn {
+  border-color: rgba(0, 0, 0, 0.2);
+  color: #000000;
+}
+
+.department-card[data-department="dermatology"] .ghost-btn:hover,
+.department-card[data-department="internal"] .ghost-btn:hover,
+.department-card[data-department="ent"] .ghost-btn:hover,
+.department-card[data-department="pediatrics"] .ghost-btn:hover {
+  border-color: rgba(0, 0, 0, 0.4);
+}
+
+.department-card--full {
+  grid-column: 1 / -1;
+  /* padding : 1rem; */
+  margin: 0.25rem;
+  /* margin-left: 0.25rem; */
+}
+
+
+.department-card--half {
+  grid-column: span 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding : 1rem;
+  margin: 0.25rem;
+}
+
+.department-card--half .department-card__image {
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  .departments-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+  
+  .department-card--full {
+    grid-column: 1 / -1;
+  }
+}
+
+.department-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.department-card__content {
+  padding: 2rem;
+  z-index: 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.department-card__content h3 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.department-card__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.department-card__actions .ghost-btn {
+  flex: 0 0 auto;
+}
+
+.department-card__image {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  margin-top: auto;
+}
+
+.department-card__image img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.department-card:hover .department-card__image img {
+  transform: scale(1.05);
+}
+
+.split-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  border-radius: 48px;
+  padding: 2.5rem;
+  border: 1px solid var(--border);
+  background: linear-gradient(135deg, #0b0b0d, #050505);
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--muted);
+}
+
+.feature-list li::before {
+  content: "•";
+  margin-right: 0.5rem;
+  color: var(--accent);
+}
+
+.experience {
+  border-radius: 48px;
+  padding: 3rem;
+  border: 1px solid var(--border);
+  background: radial-gradient(circle at 20% 20%, rgba(100, 210, 255, 0.15), transparent 55%),
+    var(--surface);
+}
+
+.experience header {
+  margin-bottom: 2rem;
+}
+
+.experience__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.experience__row {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.experience__row:last-child {
+  border-bottom: none;
+}
+
+.experience__step {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  min-width: 90px;
+}
+
+.cta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 3rem;
+  border-radius: 48px;
+  border: 1px solid var(--border);
+  background: linear-gradient(120deg, rgba(10, 132, 255, 0.1), rgba(0, 0, 0, 0.6));
+}
+
+.cta__card {
+  border-radius: 32px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.cta__card h3 {
+  margin-top: 0.4rem;
+}
+
+.cta__card ul {
+  list-style: none;
+  padding-left: 1rem;
+  color: var(--muted);
+}
+
+.cta__card li {
+  margin-bottom: 0.4rem;
+}
+
+.cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.site-footer {
+  padding: 3rem clamp(1.5rem, 6vw, 7rem);
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  font-size : 0.7rem;
+  justify-content: space-between;
+  color: var(--muted);
+}
+.site-footer-2 {
+  padding: 3rem clamp(1.5rem, 6vw, 7rem);
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  font-size : 0.7rem;
+  justify-content: center;
+  color: var(--muted);
+}
+
+@media (max-width: 640px) {
+  .site-nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .site-nav nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-video-section {
+    height: 70vh;
+    min-height: 500px;
+  }
+
+  .hero-video-content {
+    padding: 1.5rem;
+  }
+
+  .hero-video-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-video-search {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .hero-video-input {
+    min-width: 100%;
+  }
+
+  .hero-video-btn {
+    width: 100%;
+  }
+
+  .hero-video-play-btn {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 48px;
+    height: 48px;
+  }
+
+  .hero-video-play-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  main {
+    padding: 1.5rem;
+  }
+
+  .hero,
+  .split-card,
+  .experience,
+  .cta {
+    padding: 2rem;
+  }
+
+  .panel img {
+    min-height: 140px;
+  }
+
+  .pill-tray__rail {
+    grid-auto-columns: minmax(140px, 1fr);
+  }
+
+  .departments-section {
+    margin: 0 calc(-1 * 1.5rem);
+  }
+
+  .departments-section header {
+    padding: 0 1.5rem;
+  }
+
+  .departments-grid {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .department-card {
+    min-height: 320px;
+  }
+
+  .department-card--full,
+  .department-card--half {
+    grid-column: 1 / -1;
+  }
+
+  .department-card__content {
+    padding: 1.5rem;
+  }
+
+  .department-card__actions {
+    flex-direction: column;
+  }
+
+  .department-card__actions .ghost-btn {
+    width: 100%;
+  }
+
+  .department-card__image {
+    height: 200px;
+  }
+}
+
+.video-section {
+  width: 100%;
+  margin: 5rem 0;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* --- Apple Style Mega Menu CSS --- */
+
+/* 1. 네비게이션 아이템 */
+.site-nav nav {
+  display: flex;
+  gap: 2rem;
+  height: 100%;
+  align-items: center;
+}
+
+/* 중요: nav-item은 relative를 가지지 않습니다. 
+   그래야 드롭다운이 item이 아닌 화면 전체(site-nav)를 기준으로 배치됩니다. */
+.nav-item {
+  position: static; 
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  color: #333; /* 헤더가 흰색이므로 글씨는 어둡게 */
+  font-size: 0.75rem;
+  padding: 0 0.8rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.nav-item:hover .nav-link {
+  color: #000000;
+}
+
+/* 2. 드롭다운 패널 (전체 너비 배경) */
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* 헤더 바로 아래 */
+  margin-top : 01px;
+  left: 0;
+  width: 100%; /* 화면 전체 너비 */
+  
+  background: rgba(255, 255, 255, 0.95); /* 헤더와 동일한 톤 */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  
+  /* 애니메이션 초기값 */
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  z-index: 50; /* 헤더보다 뒤에 위치하되 내용은 보이게 */
+}
+
+/* 3. 호버 시 활성화 */
+.nav-item:hover .dropdown-menu {
+  height: 400px; /* 열렸을 때의 높이 (내용에 맞춰 조절 가능) */
+  opacity: 1;
+  visibility: visible;
+  padding: 40px 0; /* 내부 여백 */
+}
+
+/* 4. 드롭다운 내부 레이아웃 (Grid) */
+.dropdown-inner {
+  max-width: 980px; /* 애플 사이트 콘텐츠 너비 */
+  margin: 0 auto;
+  padding: 0 clamp(2rem, 6vw, 7rem); /* 좌우 여백 */
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr; /* 왼쪽은 넓게, 오른쪽은 좁게 */
+  gap: 40px;
+  opacity: 0; /* 내용물은 천천히 등장 */
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
+}
+
+/* 메뉴가 열리면 내용물 등장 */
+.nav-item:hover .dropdown-inner {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 5. 타이포그래피 스타일링 */
+.dropdown-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.column-label {
+  font-size: 0.75rem;
+  color: #86868b; /* 회색 라벨 */
+  margin-bottom: 8px;
+}
+
+/* 왼쪽 큰 메뉴 스타일 */
+.main-column .big-link {
+  font-size: 1.4rem; /* 큰 글씨 */
+  font-weight: 600;
+  color: #1d1d1f;
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+/* 오른쪽 작은 메뉴 스타일 */
+.list-link {
+  font-size: 0.85rem;
+  color: #1d1d1f;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.big-link:hover,
+.list-link:hover {
+  color: #0071e3; /* 애플 블루 */
+  text-decoration: underline;
+}
+
+/* --- Department Buttons Style Update --- */
+
+/* 1. '더 알아보기' 버튼: 기본 상태 (애플 블루 배경 + 흰색 글씨) */
+.department-card__actions .department-card__learn-more {
+  background-color: #0071e3 !important; /* 다른 색상 덮어쓰기 위해 important 사용 */
+  border-color: #0071e3 !important;
+  color: #ffffff !important;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+/* '더 알아보기' 버튼: 호버 상태 (더 밝은 블루) */
+.department-card__actions .department-card__learn-more:hover {
+  background-color: #147ce5 !important; /* 미세하게 더 밝은 색 */
+  border-color: #147ce5 !important;
+  color: #ffffff !important;
+}
+
+/* 2. '예약하기' 버튼: 기본 상태는 기존 유지(테두리만 있음), 호버 시 변경 */
+.department-card__actions .department-card__reserve {
+  transition: all 0.2s ease;
+  color: #0071e3 !important;
+  border-color: #0071e3 !important;
+  /* 기본 색상은 기존 설정을 따름 (검정 테두리/글씨) */
+}
+
+/* '예약하기' 버튼: 호버 상태 ('더 알아보기'의 기본 색상과 동일하게) */
+.department-card__actions .department-card__reserve:hover {
+  background-color: #0071e3 !important;
+  border-color: #0071e3 !important;
+  color: #ffffff !important;
+}
+
+/* --- Department Button Size & Font Adjustments --- */
+
+.department-card__actions .department-card__learn-more,
+.department-card__actions .department-card__reserve {
+  /* 1. 글씨 두께: 기존 500(Medium) -> 400(Regular)로 얇게 변경 */
+  font-weight: 400 !important;
+
+  /* 2. 버튼 크기 조정 */
+  /* 첫 번째 숫자(0.85rem): 위아래 패딩 -> 기존 0.65rem보다 넓힘 */
+  /* 두 번째 숫자(1.1rem): 좌우 패딩 -> 기존 1.6rem보다 좁힘 */
+  padding: 0.75rem 1.3rem !important;
+
+  /* (옵션) 폰트 사이즈 미세 조정: 버튼이 좁아질 때 글씨가 너무 크면 답답해 보여서 살짝 줄임 */
+  font-size: 0.85rem !important;
+}
+
+.gradient-text {
+  /* 그라데이션 배경 설정 (원하는 색상과 방향으로 수정 가능) */
+  background: linear-gradient(to right, #a8e0ff, #8a2be2);
+  
+  /* 배경을 텍스트 영역으로 잘라냄 (웹킷 브라우저 호환성 위해 prefix 추가) */
+  -webkit-background-clip: text;
+  background-clip: text;
+  
+  /* 텍스트 색상을 투명하게 설정하여 배경 그라데이션이 보이게 함 */
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  
+  /* 기타 텍스트 스타일 (필요에 따라 수정) */
+  font-size: 80px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* 가로 배치를 위한 Flex 컨테이너 */
+.flex-container {
+  display: flex;          /* 자식 요소들을 가로로 배치 */
+  align-items: center;    /* 수직 가운데 정렬 */
+  gap: 3rem;              /* 텍스트와 이미지 사이 간격 (원하는 만큼 조절) */
+  /* text-align: center;  <-- 이 속성이 부모에게 있다면 제거하거나 left로 변경해야 합니다 */
+}
+
+/* 텍스트 그룹이 너무 넓어지지 않도록 설정 (선택사항) */
+.text-group {
+  flex: 1;                /* 남는 공간을 차지하도록 설정 */
+  text-align: center;       /* 텍스트 왼쪽 정렬 */
+}
+
+/* 이미지 스타일 (인라인 스타일을 CSS로 옮겨옴) */
+.flex-container img {
+  /* flex: 1; <-- 이미지도 공간을 차지하게 하려면 주석 해제 */
+  width: 100%;
+  max-width: 600px;
+  height: auto;           /* 비율 유지 */
+  /* margin: 2rem auto; <-- 기존 마진 제거 */
+  /* display: block;    <-- Flex 아이템이 되므로 제거 */
+}
+
+/* --- 반응형 (옵션) --- */
+/* 모바일 화면(예: 768px 이하)에서는 다시 세로로 배치하고 싶을 때 */
+@media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column; /* 세로 배치로 변경 */
+    text-align: center;     /* 다시 가운데 정렬 */
+    gap: 2rem;
+  }
+  
+  .text-group {
+    text-align: center;
+  }
+}
+
+
+/* 부모(main)의 패딩을 뚫고 화면 꽉 차게 만드는 클래스 */
+.full-width-img {
+  width: 100vw;           /* 1. 화면 전체 너비(Viewport Width)로 설정 */
+  position: relative;     /* 2. 위치 조정을 위해 relative 설정 */
+  left: 50%;              /* 3. 부모 기준 중앙으로 이동 */
+  margin-left: -50vw;     /* 4. 화면 너비의 절반만큼 왼쪽으로 당겨서 중앙 정렬 */
+  
+  max-width: none;        /* 기존의 최대 너비 제한 해제 */
+  display: block;
+  height: auto;
+  border-radius: 0;            /* 5. 필요시 테두리 반경 제거 */
+}
+
+/* --- Serial Number Lookup Section --- */
+
+.serial-section {
+  /* split-card와 동일한 배경 및 테두리 스타일 */
+  background: linear-gradient(135deg, #0b0b0d, #050505);
+  border: 1px solid var(--border);
+  border-radius: 48px;
+  padding: 3rem; /* 내부 여백 */
+  
+  /* 좌우 배치 레이아웃 */
+  display: grid;
+  grid-template-columns: 1fr 240px; /* 텍스트 영역(가변) : 이미지(고정) */
+  gap: 3rem;
+  align-items: center;
+}
+
+/* 텍스트 영역 스타일 */
+.serial-content h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.serial-content p {
+  color: var(--muted);
+  margin-bottom: 2rem;
+  max-width: 45ch;
+}
+
+/* 입력창 + 버튼 그룹 */
+.serial-input-group {
+  display: flex;
+  gap: 0.8rem;
+  max-width: 480px;
+}
+
+.serial-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  padding: 0.8rem 1.2rem;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.serial-input:focus {
+  border-color: var(--accent); /* 포커스 시 파란색 테두리 */
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* 우측 이미지 영역 (정사각형) */
+.serial-image-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* 정사각형 비율 강제 */
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05); /* 이미지가 없을 때를 대비한 배경 */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.serial-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0; /* 래퍼가 둥글기 때문에 이미지는 직각이어도 됨 */
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .serial-section {
+    grid-template-columns: 1fr; /* 세로 배치로 변경 */
+    gap: 2rem;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .serial-content p {
+    margin: 0 auto 2rem;
+  }
+
+  .serial-input-group {
+    margin: 0 auto;
+  }
+
+  .serial-image-wrapper {
+    width: 180px; /* 모바일에서는 이미지 크기 줄임 */
+    margin: 0 auto;
+  }
+}
